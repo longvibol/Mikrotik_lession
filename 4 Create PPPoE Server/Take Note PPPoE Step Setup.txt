@@ -1,0 +1,50 @@
+How to Configure PPPoE Server on MIK Routerboard
+
+1-Configure LAN interface 
+2-Setup DNS Server 
+3-Configure IP Pool for pppoe users (IP Pool: IP Rang that we generator to the client): អោយវាអាចចាប់យកតែចន្លោះ IP Rang 
+ដែលយើងធ្វើនឹងទេ
+
+4- Create a PPPoE Server Profile 
+5- Create PPPoE Username and Password (Secret)
+6- Create a PPPoE Interface 
+
+----------------------------- what is DNS Server
+
+DNS Server: translate domain names (like example.com) into IP addresses for devices on your network. 
+
+In MikroTik, the DNS server feature allows your router to act as a local resolver and cache for domain name lookups. That means it can translate domain names (like example.com) into IP addresses for devices on your network—and do it faster by storing previous results.
+
+------------------------------ what is local resolver 
+
+A local resolver is a DNS service running directly on a device or within a local network that handles domain name lookups without relying entirely on external DNS servers. It’s like having your own mini search engine for IP addresses—right at home.
+
+
+------------------------------Why need DNS server in PPPoE server 
+
+MikroTik, configuring a DNS server is essential for ensuring that connected clients can resolve domain names properly. Here's why it matters:
+
+
+-----------------------------Why DNS Is Needed in PPPoE?
+
+
+When clients connect via PPPoE, they typically receive:
+- An IP address from the MikroTik router (via IP Pool)
+- A gateway to route traffic
+- And optionally, DNS server information to resolve domain names
+Without DNS:
+- Clients can reach IP addresses but won’t be able to access websites by name (e.g., google.com won’t work, but 142.250.190.78 might).
+- This breaks most internet usage scenarios, especially for non-technical users.
+
+Summary : 
+
+- Client Side need: PPPOE server we want to the client that need internet can use Username and Password to get internet. 
+So they need IP , they need DNS to talk to the internet at outside that LAN
+- PPPOE side : Need IP Pool that can provide to the client; need DNS server, need User and password 
+
+
+
+
+
+
+
